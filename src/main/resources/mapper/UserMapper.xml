@@ -12,4 +12,8 @@
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="register_date" jdbcType="TIMESTAMP" property="registerDate" />
   </resultMap>
+
+  <insert id="testInsert" parameterType="User">
+    insert into user(username,password,nick_name,sex,register_date) values (#{username},#{password},#{nickName},#{sex},#{registerDate})
+  </insert>
 </mapper>

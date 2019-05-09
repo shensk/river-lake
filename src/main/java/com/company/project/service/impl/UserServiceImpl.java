@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -18,4 +20,15 @@ import javax.annotation.Resource;
 public class UserServiceImpl extends AbstractService<User> implements UserService {
     @Resource
     private UserMapper userMapper;
+
+    @Override
+    public void testInsert() {
+        User user = new User();
+        user.setNickName("test");
+        user.setPassword("123456");
+        user.setSex(1);
+        user.setUsername("testU");
+        user.setRegisterDate(new Date());
+        userMapper.testInsert(user);
+    }
 }
